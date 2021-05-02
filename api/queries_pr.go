@@ -625,6 +625,13 @@ func PullRequestByNumber(client *Client, repo ghrepo.Interface, number int) (*Pu
 				mergeable
 				additions
 				deletions
+				files(first: 100) {
+					nodes {
+						additions
+						deletions
+						path
+					}
+				}
 				author {
 				  login
 				}
@@ -728,6 +735,13 @@ func PullRequestForBranch(client *Client, repo ghrepo.Interface, baseBranch, hea
 					mergeable
 					additions
 					deletions
+					files(first: 100) {
+						nodes {
+							additions
+							deletions
+							path
+						}
+					}
 					author {
 						login
 					}
